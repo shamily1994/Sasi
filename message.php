@@ -7,10 +7,10 @@ $u_email=$_POST['u_email'];
 $u_phone=$_POST['u_phone'];
 $u_message=$_POST['u_message'];
 
-/*echo $u_name;
+echo $u_name;
 echo $u_email;
 echo $u_phone;
-echo $u_message;*/
+echo $u_message;
 
 
 
