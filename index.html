@@ -224,11 +224,11 @@ z-index: 9;}
     <div class="row" style="margin-top: 50px;">
   <div class="col align-self-center"id="Contact">
 
-    <form class="needs-validation" novalidate>
+        <form id="contact_form" class="needs-validation" novalidate method="post" action="message.php">
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="validationCustom01" class="menu">Name</label>
-          <input type="text" class="form-control" id="validationCustom01" required>
+          <input type="text" class="form-control" id="validationCustom01" name="u_name" required>
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -238,7 +238,7 @@ z-index: 9;}
         </div>
         <div class="col-md-6 mb-3">
           <label for="validationCustom02" class="menu">Email</label>
-          <input type="email" class="form-control" id="validationCustom02" required>
+          <input type="email" class="form-control" id="validationCustom02" name="u_email"required>
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -250,7 +250,7 @@ z-index: 9;}
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="validationCustom03" class="menu">Phone Number</label>
-          <input type="number" class="form-control" id="validationCustom03" required>
+          <input type="tel" class="form-control" id="validationCustom03" pattern="[0-9]{10}"  name="u_phone" required>
           <div class="invalid-feedback">
             Please provide a valid Phone number.
           </div>
@@ -260,8 +260,7 @@ z-index: 9;}
         </div>
         <div class="col-md-6 mb-3">
           <label for="validationCustom05" class="menu">Message</label>
-          <textarea class="form-control" id="validationCustom05" placeholder="Please Type Your Message Here." required></textarea>
-         <!-- <input type="text area" class="form-control" id="validationCustom05" required>-->
+          <textarea class="form-control" id="validationCustom05" placeholder="Please Type Your Message Here." name="u_message" required></textarea>
           <div class="invalid-feedback">
             Please provide a message.
           </div>
@@ -270,23 +269,40 @@ z-index: 9;}
           </div>
         </div>
       </div>
-     <!-- <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-          <label class="form-check-label" for="invalidCheck">
-            Agree to terms and conditions
-          </label>
-          <div class="invalid-feedback">
-            You must agree before submitting.
-          </div>
-        </div>
-      </div> -->
-      <button class="btn btn-primary" type="submit" style="background-color:#a05eb5; border-color:#a05eb5;">Send Message</button>
+
+      <button class="btn btn-primary" type="submit"  style="background-color:#a05eb5; border-color:#a05eb5;">Send Message</button>
     </form>
   </div>
 </div>
 </div>
-</section><script>
+</section>
+
+<section>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom:0px;">
+          <!--modal-title -->
+          <h4 class="mainheading" style="font-size:50px; color:#71a671; ">Thank you</h4>
+          <button type="button" class="close" data-dismiss="modal" onclick="javascript:window.location.reload()" >&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <p class="content_text">Your message has reached me succesfully. I will get back to you shortly.</p>
+        </div>
+
+            </div>
+
+    </div>
+  </div>
+
+
+  </section>
+<script>
+
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function() {
     'use strict';
@@ -300,12 +316,23 @@ z-index: 9;}
             event.preventDefault();
             event.stopPropagation();
           }
+            /*else{
+              $("#myModal").modal();
+
+
+          }*/
           form.classList.add('was-validated');
         }, false);
       });
     }, false);
   })();
+
+
+
+
   </script>
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
